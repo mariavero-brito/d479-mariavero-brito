@@ -1,0 +1,402 @@
+/* ============================================
+   style.css - Taniti Tourism Website
+   Shared styles for all 5 pages
+   ============================================ */
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+/* --- Navigation --- */
+nav {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 12px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+nav span {
+    color: #aaa;
+}
+
+/* --- Page Header --- */
+.page-header {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+.page-header p {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+/* --- Main Content Wrapper --- */
+.content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* --- Image Placeholder --- */
+.img-placeholder {
+    background-color: #e8e8e8;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* X lines across placeholder */
+.img-placeholder::before,
+.img-placeholder::after {
+    content: '';
+    position: absolute;
+    background-color: #ccc;
+    height: 1px;
+    width: 141%;
+    top: 50%;
+    left: -20%;
+}
+
+.img-placeholder::before {
+    transform: rotate(atan(1));
+    transform: rotate(35deg);
+}
+
+.img-placeholder::after {
+    transform: rotate(-35deg);
+}
+
+.img-placeholder span {
+    position: relative;
+    z-index: 1;
+    background: rgba(232,232,232,0.7);
+    padding: 4px 8px;
+}
+
+/* Common placeholder sizes */
+.img-large {
+    width: 100%;
+    height: 220px;
+}
+
+.img-medium {
+    width: 100%;
+    height: 170px;
+}
+
+.img-small {
+    width: 160px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+/* --- Two-Column Grid --- */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* --- Card (image + text + button) --- */
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card p {
+    margin: 8px 0 4px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.card .card-lines {
+    margin: 10px 0;
+}
+
+.card .card-lines .line {
+    height: 10px;
+    background-color: #ddd;
+    margin-bottom: 6px;
+    border-radius: 2px;
+}
+
+.card .card-lines .line.short {
+    width: 70%;
+}
+
+.card .card-lines .line.shorter {
+    width: 50%;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid #555;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+/* Center a button */
+.btn-center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/* --- Hero Button (Home page) --- */
+.hero-btn {
+    display: block;
+    padding: 14px 40px;
+    border: 2px solid #555;
+    background-color: #f0f0f0;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 auto 30px;
+    width: fit-content;
+}
+
+/* --- Side-by-side layout (small image + text) --- */
+.side-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.side-card .side-text {
+    flex: 1;
+}
+
+.side-card .side-text .line {
+    height: 10px;
+    background-color: #ddd;
+    margin-bottom: 8px;
+    border-radius: 2px;
+}
+
+.side-card .side-text .line.short {
+    width: 75%;
+}
+
+.side-card .side-text .line.shorter {
+    width: 55%;
+}
+
+/* --- Plan Your Visit / Footer Section --- */
+.plan-section {
+    border-top: 2px solid #ccc;
+    background-color: #f7f7f7;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.plan-section h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.plan-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.plan-row .plan-text .line {
+    height: 10px;
+    background-color: #ccc;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    width: 200px;
+}
+
+.plan-row .plan-text .line.short {
+    width: 150px;
+}
+
+/* --- Footer bar --- */
+footer {
+    border-top: 1px solid #ccc;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    font-size: 13px;
+    color: #555;
+}
+
+footer .btn-small {
+    padding: 7px 14px;
+    border: 1px solid #aaa;
+    background: #fff;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* --- Social Media Section (Contact) --- */
+.social-section {
+    background-color: #f7f7f7;
+    border-top: 2px solid #ccc;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.social-section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* --- Contact Form --- */
+.contact-form {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 10px 20px 30px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    margin-top: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form .submit-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-form button {
+    padding: 12px 40px;
+    border: 2px solid #555;
+    background-color: #f0f0f0;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* --- About page text sections --- */
+.about-text {
+    margin-bottom: 30px;
+}
+
+.about-text h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+
+.about-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.about-text ul {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+    padding-left: 20px;
+}
